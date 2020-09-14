@@ -1,6 +1,7 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
+#include <iostream>
 
 // Criado o tipo HeapCell que armazenará um valor e uma referência a próxima celula da pilha encadeada 
 class QueueCell
@@ -12,10 +13,11 @@ class QueueCell
     public:
         QueueCell();
     
-    friend class Queue;
+    template<typename T> friend class Queue;
 };
 
 // Classe da pilha com métodos necessários de acorodo com a esecificação do trabalho
+template <typename T> 
 class Queue
 {
     private:
@@ -34,6 +36,65 @@ class Queue
     
 
 };
+template<typename T> Queue<T>::Queue()
+{
+    head = new QueueCell();
+    last = head;
+    size = 0;
+}
 
+template<typename T> Queue<T>::~Queue() 
+{
+    clear();
+    delete head;
+    delete last;
+}
+
+template<typename T> bool Queue<T>::empty()
+{
+   return (size==0);
+}
+
+template<typename T> void Queue<T>::insert(int number)
+{
+
+    QueueCell *newCell;
+    newCell = new QueueCell;
+    newCell->id = number;
+    last->next = newCell;
+    last = newCell;
+    size++;
+}
+
+template<typename T> int Queue<T>::remove()
+{
+    if(size == 0) throw "Lista vazia!";
+    QueueCell *auxCell;
+    int aux = head->next->id;
+    auxCell = new QueueCell();
+    auxCell = head;
+    head = head->next; 
+    delete auxCell;
+    size--;
+    return aux;
+}
+
+template<typename T> void Queue<T>::clear()
+{
+    while(!empty())
+        remove();
+    std::cout << "A fila foi esvaziada!" <<std::endl;
+}
+
+template<typename T> void Queue<T>::print()
+{
+    QueueCell *cell;
+    cell = head->next;
+    while(cell!=nullptr)
+    {
+        std::cout<< cell->id <<std::endl;
+        cell = cell->next;
+    }
+}
 #endif // HEAP_H
 
