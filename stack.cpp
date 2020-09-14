@@ -1,8 +1,11 @@
-#include "queue.h"
+#include "stack.h"
 #include <iostream>
 
-QueueCell::QueueCell()
+
+stackCell::stackCell()
 {
     id = -1;
     next = nullptr;
 }
+
+
