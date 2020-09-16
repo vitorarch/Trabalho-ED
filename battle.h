@@ -4,18 +4,18 @@
 #include "stack.h"
 #include "queue.h"
 
+// classe para representar as naves
 class Spaceship
 {
     private: 
         int id;
 
     public:
-        Spaceship();
         Spaceship(int id);
         int getId();
-        friend class stackcell;
 };
 
+//classe responsável pela execução das operações de acordo com a instrução recebida 
 class Battle
 {
     private:
@@ -35,4 +35,4 @@ class Battle
 };
 
 
-#endif // SPACESHIPS_H
+#endif // BATTLE_H

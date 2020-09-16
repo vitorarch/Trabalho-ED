@@ -1,6 +1,4 @@
 #include "stack.h"
-#include <iostream>
-
 
 stackCell::stackCell()
 {

@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-// Criado o tipo HeapCell que armazenará um valor e uma referência a próxima celula da pilha encadeada 
+// Criado o tipo QueueCell que armazenará um valor e uma referência a próxima celula da pilha encadeada 
 class QueueCell
 {
     private:
@@ -33,9 +33,9 @@ class Queue
         virtual int remove();
         virtual void print();
         virtual void clear();
-    
-
 };
+
+//Implementação da classe Queue com tipo genérico
 template<typename T> Queue<T>::Queue()
 {
     head = new QueueCell();
@@ -88,6 +88,7 @@ template<typename T> void Queue<T>::clear()
 
 template<typename T> void Queue<T>::print()
 {
+    if(size == 0) throw "Fila vazia!";
     QueueCell *cell;
     cell = head->next;
     while(cell!=nullptr)
@@ -96,5 +97,6 @@ template<typename T> void Queue<T>::print()
         cell = cell->next;
     }
 }
+
 #endif // HEAP_H
 

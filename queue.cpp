@@ -1,5 +1,4 @@
 #include "queue.h"
-#include <iostream>
 
 QueueCell::QueueCell()
 {

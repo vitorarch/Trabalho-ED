@@ -3,7 +3,6 @@
 
 #include <iostream>
 
-
 // Criado o tipo StackCell que armazenará um valor e uma referência a próxima celula da pilha encadeada 
 class stackCell
 {
@@ -14,7 +13,6 @@ class stackCell
     public:
         stackCell();
     
-    //friend class stack;
     template<typename T> friend class Stack;
 };
 
@@ -28,21 +26,27 @@ class Stack
         
     public:
         Stack();
-        //~Stack();
+        ~Stack();
         bool empty();
         void insert(int id);
         int remove();
         void print();
         void clear();
-    
-
 };
 
+//Implementação da classe Stack com tipo genérico
 template<typename T> Stack<T>::Stack()
 {
     top = nullptr;
     size = 0;
 }
+
+template<typename T> Stack<T>::~Stack()
+{
+    clear();
+    delete top;
+}
+
 
 template<typename T> void Stack<T>::insert(int id)
 {
