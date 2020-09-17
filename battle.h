@@ -4,18 +4,18 @@
 #include "stack.h"
 #include "queue.h"
 
+// class to represent the ships
 class Spaceship
 {
     private: 
         int id;
 
     public:
-        Spaceship();
         Spaceship(int id);
         int getId();
-        friend class stackcell;
 };
 
+//class responsable to control the inputs and execute respective function 
 class Battle
 {
     private:
@@ -34,5 +34,4 @@ class Battle
         void inRepair();
 };
 
-
-#endif // SPACESHIPS_H
+#endif // BATTLE_H

@@ -1,4 +1,3 @@
-#include "stack.h"
 #include "battle.h"
 #include <iostream>
 #include <cstdio>
@@ -35,8 +34,6 @@ int main()
             default:
                 war.damageShips(control);
                 std::cout<<"nave " << control << " avariada" << std::endl;
-
-                
         }
     }
 
