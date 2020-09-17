@@ -4,7 +4,7 @@
 #include "stack.h"
 #include "queue.h"
 
-// classe para representar as naves
+// class to represent the ships
 class Spaceship
 {
     private: 
@@ -15,7 +15,7 @@ class Spaceship
         int getId();
 };
 
-//classe responsável pela execução das operações de acordo com a instrução recebida 
+//class responsable to control the inputs and execute respective function 
 class Battle
 {
     private:
@@ -33,6 +33,5 @@ class Battle
         void readyForBattle();
         void inRepair();
 };
-
 
 #endif // BATTLE_H
