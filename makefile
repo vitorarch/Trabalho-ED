@@ -1,17 +1,22 @@
-work: batlle.o queue.o stack.o main.o
-	g++ battle.o queue.o stack.o main.o -o work
+CC = g++ # compilador, troque para gcc se preferir utilizar C
+CFLAG = -c # compiler flags, troque o que quiser, exceto bibliotecas externas
+EXEC = ./tp1 # nome do executavel que sera gerado, nao troque
+TMPOUT = tp1.testresult
 
-main.o : main.cpp
-	g++ -c main.cpp
+$(EXEC): battle.o queue.o stack.o main.cpp
+	$(CC) battle.o queue.o stack.o main.cpp -o $(EXEC)
 
-batlle.o : battle.cpp
-	g++ -c battle.cpp
+battle.o :  battle.cpp
+	$(CC) $(CFLAG) battle.cpp -o battle.o
 
 queue.o : queue.cpp
-	g++ -c queue.cpp
+	$(CC) $(CFLAG) queue.cpp -o queue.o
 
 stack.o : stack.cpp
-	g++ -c stack.cpp
+	$(CC) $(CFLAG) stack.cpp -o stack.o
+
+test: $(EXEC)
+	@bash run_tests.sh $(EXEC) $(TMPOUT)
 
 clean:
 	rm *.o work

@@ -82,12 +82,10 @@ template<typename T> void Queue<T>::clear()
 {
     while(!empty())
         remove();
-    std::cout << "A fila foi esvaziada!" <<std::endl;
 }
 
 template<typename T> void Queue<T>::print()
 {
-    if(size == 0) throw "Fila vazia!";
     QueueCell *cell;
     cell = head->next;
     while(cell!=nullptr)
