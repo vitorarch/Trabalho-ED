@@ -36,6 +36,5 @@ int main()
                 std::cout<<"nave " << control << " avariada" << std::endl;
         }
     }
-
-    system("pause");
+    return 0;
 }

@@ -59,10 +59,8 @@ template<typename T> void Stack<T>::insert(int id)
 
 template<typename T> void Stack<T>::clear()
 {
-    if(size == 0) throw "Pilha vazia!";
     while(!empty())
         remove();
-    std::cout << "A Pilha foi esvaziada!" <<std::endl;
 }
 
 template<typename T> int Stack<T>::remove()
@@ -84,7 +82,6 @@ template<typename T> bool Stack<T>::empty()
 
 template<typename T> void Stack<T>::print()
 {
-    if(size == 0) throw "Pilha vazia!";
     stackCell *cell;
     cell = top;
     while(cell!=nullptr)
