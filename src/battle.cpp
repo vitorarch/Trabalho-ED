@@ -1,6 +1,6 @@
-#include "battle.h"
-#include "stack.h"
-#include "queue.h"
+#include "headers/battle.h"
+#include "headers/queue.h"
+#include "headers/stack.h"
 
 
 Spaceship::Spaceship(int id) 
